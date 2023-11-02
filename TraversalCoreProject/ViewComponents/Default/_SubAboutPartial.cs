@@ -4,14 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace TraversalCoreProject.ViewComponents.Default
 {
-    public class _FeaturePartial:ViewComponent
+    public class _SubAboutPartial:ViewComponent
     {
-        FeatureManager featureManager = new FeatureManager(new EfFeature());
+        SubAboutManager subAboutManager = new SubAboutManager(new EfSubAbout());
         public IViewComponentResult Invoke()
         {
-            //var values = featureManager.TGetList();
-            ViewBag.image1 = 1;
-            return View();
+            var values = subAboutManager.TGetList();
+            return View(values);
         }
     }
 }
